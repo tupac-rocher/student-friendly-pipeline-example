@@ -8,7 +8,7 @@ public class ComputerTest {
     @Test
     public void test_1(){
         Computer computer = new Computer();
-        assertFalse(computer.isOn());
+        assertTrue(computer.isOn());
     }
 
     @Test
