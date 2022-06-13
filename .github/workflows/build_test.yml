@@ -15,9 +15,11 @@ jobs:
           distribution: 'adopt'
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots package
-      - name: Check test coverage
-        id: test-coverage
-        uses: johanvanhelden/gha-clover-test-coverage-check@v1
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: 5monkeys/cobertura-action@master
         with:
-          percentage: "50"
-          filename: "coverage.xml"
+          path: src/test.xml
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          minimum_coverage: 75
