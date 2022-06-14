@@ -25,9 +25,6 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
       - name: Test with Maven
-        run: mvn test
-      - uses: 5monkeys/cobertura-action@master
-        with:
-          path: src/test.xml
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          minimum_coverage: 75
+        run: mvn --batch-mode --update-snapshots package
+      - name: jacoco-badge-generator
+        uses: cicirello/jacoco-badge-generator@v2.6.1
