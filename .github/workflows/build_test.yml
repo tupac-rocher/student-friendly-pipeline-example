@@ -28,7 +28,7 @@ jobs:
         run: mvn -B test
       - name: Run Coverage
         run: |
-            mvn testCoverage
+            mvn report
       - name: Add coverage to PR
         id: jacoco
         uses: madrapps/jacoco-report@v1.2
