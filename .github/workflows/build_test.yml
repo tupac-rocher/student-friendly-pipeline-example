@@ -42,9 +42,9 @@ jobs:
           echo "Total coverage ${{ steps.jacoco.outputs.coverage-overall }}"
           echo "Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}"
       - name: Comment PR
-      uses: thollander/actions-comment-pull-request@v1
-      with:
-        message: |
-          Total coverage ${{ steps.jacoco.outputs.coverage-overall }}
-          Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          message: |
+            Total coverage ${{ steps.jacoco.outputs.coverage-overall }}
+            Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
