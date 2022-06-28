@@ -1,6 +1,6 @@
 name: Java CI
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   build:
@@ -48,3 +48,9 @@ jobs:
             Total coverage ${{ steps.jacoco.outputs.coverage-overall }}
             Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run check style
+          uses: nikitasavinov/checkstyle-action@master
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            reporter: 'github-pr-check'
+            tool_name: 'testtool'
