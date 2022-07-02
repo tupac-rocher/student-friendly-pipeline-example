@@ -58,7 +58,7 @@ jobs:
         id: checkstyleInfo
         uses: tupac-rocher/mvn-format-xml-reports@v1.1
         with:
-          checkstyle-result-mvn: ${{ github.workspace }}/target/checkstyle-result.xml
+          checkstyle-result-xml: ${{ github.workspace }}/target/checkstyle-result.xml
       - name: Another Comment PR
         uses: thollander/actions-comment-pull-request@v1
         with:
