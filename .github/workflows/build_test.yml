@@ -61,8 +61,8 @@ jobs:
           checkstyle-result-mvn: ${{ github.workspace }}/target/checkstyle-result.xml
       - name: Another Comment PR
         uses: thollander/actions-comment-pull-request@v1
-          with:
-            message: |
-              ${{ steps.checkstyleInfo.outputs.checkstyle-result-string }}
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          message: |
+            ${{ steps.checkstyleInfo.outputs.checkstyle-result-string }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
