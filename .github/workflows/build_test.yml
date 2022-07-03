@@ -56,12 +56,14 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           min-coverage-overall: 40
           min-coverage-changed-files: 60
-      - name: Run check style
+      - name: Run check style to show in action
         uses: nikitasavinov/checkstyle-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: 'github-pr-check'
           tool_name: 'testtool'
+      - name: Run checkstyle
+        run: mvn checkstyle:checkstyle
       - name: Get Checkstyle info
         id: checkstyleInfo
         uses: tupac-rocher/mvn-format-xml-reports@v1.1
