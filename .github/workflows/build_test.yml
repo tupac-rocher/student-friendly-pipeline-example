@@ -23,20 +23,10 @@ jobs:
         with:
           owner: 'tushartushar'
           repository: 'DesigniteJava'
-      - name: Experiment
-        run: |
-          pwd           
-          mkdir hello
-          cd hello
-          pwd
-      - name: Access repository
-        run: cd DesigniteJava
-      - name: Access repository
-        run: cd DesigniteJava
-      - name: List
-        run: ls
       - name: Create DesigniteJava .jar
-        run: mvn package -Dmaven.test.skip
+        run: |
+          cd DesigniteJava
+          mvn package -Dmaven.test.skip
       - name: Upload DesigniteJava .jar
         uses: actions/upload-artifact@v3
         with:
