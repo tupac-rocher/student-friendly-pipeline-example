@@ -82,6 +82,6 @@ jobs:
         with:
           name: designite-java
       - name: Run
-        run:  java -jar designite-java -i ./src -o ./target
+        run:  java -jar DesigniteJava.jar -i ./src -o ./target
 
 
