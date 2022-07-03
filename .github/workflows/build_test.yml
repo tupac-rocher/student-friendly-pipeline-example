@@ -15,6 +15,21 @@ jobs:
           distribution: 'adopt'
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots package
+  upload-designite-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone tushartushar/DesigniteJava
+        uses: GuillaumeFalourd/clone-github-repo-action@v2
+        with:
+          owner: 'tushartushar'
+          repository: 'DesigniteJava'
+      - name: Create DesigniteJava .jar
+        run: mvn package -Dmaven.test.skip
+      - name: Upload DesigniteJava .jar
+        uses: actions/upload-artifact@v3
+        with:
+          name: designite-java
+          path: target/DesigniteJava.jar
   report:
     runs-on: ubuntu-latest
     steps:
@@ -56,6 +71,11 @@ jobs:
             Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}
             ${{ steps.checkstyleInfo.outputs.checkstyle-result-string }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: test
-        run: ls
+      - name: Download a single artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: designite-java
+        needs: designite-java
+      - name: Run
+        run: java -jar Designite.jar -i ./ -o ./
 
