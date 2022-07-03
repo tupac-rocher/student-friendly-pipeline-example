@@ -56,4 +56,6 @@ jobs:
             Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}
             ${{ steps.checkstyleInfo.outputs.checkstyle-result-string }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: test
+        run: ls
 
