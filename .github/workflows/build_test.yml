@@ -23,6 +23,8 @@ jobs:
         with:
           owner: 'tushartushar'
           repository: 'DesigniteJava'
+      - name: Access repository
+        run: cd DesigniteJava
       - name: Create DesigniteJava .jar
         run: mvn package -Dmaven.test.skip
       - name: Upload DesigniteJava .jar
