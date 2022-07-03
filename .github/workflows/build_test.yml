@@ -25,6 +25,8 @@ jobs:
           repository: 'DesigniteJava'
       - name: Access repository
         run: cd DesigniteJava
+      - name: List
+        run: ls
       - name: Create DesigniteJava .jar
         run: mvn package -Dmaven.test.skip
       - name: Upload DesigniteJava .jar
