@@ -27,11 +27,12 @@ jobs:
         run: |
           cd DesigniteJava
           mvn package -Dmaven.test.skip
+          pwd
       - name: Upload DesigniteJava .jar
         uses: actions/upload-artifact@v3
         with:
           name: designite-java
-          path: target/DesigniteJava.jar
+          path: DesigniteJava/target/DesigniteJava.jar
   report:
     runs-on: ubuntu-latest
     needs: upload-designite-artifact
