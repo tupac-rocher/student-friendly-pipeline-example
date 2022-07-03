@@ -23,6 +23,12 @@ jobs:
         with:
           owner: 'tushartushar'
           repository: 'DesigniteJava'
+      - name: Experiment
+        run: |
+          pwd           
+          mkdir hello
+          cd hello
+          pwd
       - name: Access repository
         run: cd DesigniteJava
       - name: Access repository
