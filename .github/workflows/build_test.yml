@@ -64,24 +64,26 @@ jobs:
           tool_name: 'testtool'
       - name: Run checkstyle
         run: mvn checkstyle:checkstyle
-      - name: Get Checkstyle info
-        id: checkstyleInfo
-        uses: tupac-rocher/mvn-format-xml-reports@v1.1
-        with:
-          checkstyle-result-xml: ${{ github.workspace }}/target/checkstyle-result.xml
-      - name: Another Comment PR
-        uses: thollander/actions-comment-pull-request@v1
-        with:
-          message: |
-            Total coverage ${{ steps.jacoco.outputs.coverage-overall }}
-            Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}
-            ${{ steps.checkstyleInfo.outputs.checkstyle-result-string }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Download a single artifact
         uses: actions/download-artifact@v3
         with:
           name: designite-java
       - name: Run
         run:  java -jar DesigniteJava.jar -i ./src -o ./target
+      - name: Get report info
+        id: reportsInfo
+        uses: tupac-rocher/mvn-format-xml-reports@v1.1
+        with:
+          checkstyle-result-xml: ${{ github.workspace }}/target/checkstyle-result.xml
+          designite-result-csv: ${{ github.workspace }}/target/designCodeSmells.csv
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          message: |
+            Total coverage ${{ steps.jacoco.outputs.coverage-overall }}
+            Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}
+            ${{ steps.reportsInfo.outputs.checkstyle-comment }}
+            ${{ steps.reportsInfo.outputs.designite-comment }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
