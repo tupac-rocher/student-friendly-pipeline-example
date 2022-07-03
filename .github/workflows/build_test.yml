@@ -83,7 +83,6 @@ jobs:
             Total coverage ${{ steps.jacoco.outputs.coverage-overall }}
             Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}
             ${{ steps.reportsInfo.outputs.checkstyle-comment }}
-            ${{ steps.reportsInfo.outputs.designite-comment }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
