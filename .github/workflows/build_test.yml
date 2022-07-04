@@ -83,7 +83,7 @@ jobs:
           git clone https://github.com/jazzmuesli/ck-mvn-plugin.git
           cd ck-mvn-plugin
           pwd
-          mvn clean install
+          mvn clean install -Dck.version=0.7.0
           cd ${{ github.workspace }}
           pwd
           mvn com.github.jazzmuesli:ck-mvn-plugin:metrics
