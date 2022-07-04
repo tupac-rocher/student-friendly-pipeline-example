@@ -62,14 +62,16 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: 'github-pr-check'
           tool_name: 'testtool'
-      - name: Run checkstyle
+      - name: Run Checkstyle
         run: mvn checkstyle:checkstyle
       - name: Download a single artifact
         uses: actions/download-artifact@v3
         with:
           name: designite-java
-      - name: Run
+      - name: Run Designite
         run:  java -jar DesigniteJava.jar -i ./src -o ./target/designite
+      - name: Run CK plugin
+        run: mvn com.github.jazzmuesli:ck-mvn-plugin:metrics
       - name: Get report info
         id: reportsInfo
         uses: tupac-rocher/mvn-format-xml-reports@v1.2
@@ -80,6 +82,7 @@ jobs:
         uses: thollander/actions-comment-pull-request@v1
         with:
           message: |
+            # Heading level 1
             Total coverage ${{ steps.jacoco.outputs.coverage-overall }}
             Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}
             ${{ steps.reportsInfo.outputs.checkstyle-comment }}

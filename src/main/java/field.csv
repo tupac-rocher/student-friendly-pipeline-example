@@ -1,0 +1,6 @@
+file,class,method,variable,usage
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Computer.java,com.montpellier.Computer,Computer/0,isOn,1
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Computer.java,com.montpellier.Computer,isOn/0,isOn,2
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Computer.java,com.montpellier.Computer,turnOnComputer/0,isOn,1
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Computer.java,com.montpellier.Computer,turnOffComputer/0,isOn,1
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Office.java,com.montpellier.Office,Office/0,computer,1
