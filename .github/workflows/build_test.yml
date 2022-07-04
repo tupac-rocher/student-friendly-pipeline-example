@@ -84,7 +84,7 @@ jobs:
           cd ck-mvn-plugin
           pwd
           mvn clean install
-          cd ../${{ github.workspace }}
+          cd ${{ github.workspace }}
           pwd
           mvn com.github.jazzmuesli:ck-mvn-plugin:metrics
       - name: Get report info
