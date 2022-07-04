@@ -75,8 +75,13 @@ jobs:
           name: designite-java
       - name: Run Designite
         run:  java -jar DesigniteJava.jar -i ./src -o ./target/designite
-      #- name: Run CK plugin
-      #  run: mvn com.github.jazzmuesli:ck-mvn-plugin:metrics
+      - name: Run CK plugin
+        run: |
+          git clone https://github.com/jazzmuesli/ck-mvn-plugin.git
+          cd ck-mvn-plugin
+          mvn clean install
+          cd ..
+          mvn com.github.jazzmuesli:ck-mvn-plugin:metrics
       - name: Get report info
         id: reportsInfo
         uses: tupac-rocher/mvn-format-xml-reports@v1.2
