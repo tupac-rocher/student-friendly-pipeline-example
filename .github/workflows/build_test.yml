@@ -77,11 +77,15 @@ jobs:
         run:  java -jar DesigniteJava.jar -i ./src -o ./target/designite
       - name: Run CK plugin
         run: |
+          pwd
           cd ..
+          pwd
           git clone https://github.com/jazzmuesli/ck-mvn-plugin.git
           cd ck-mvn-plugin
+          pwd
           mvn clean install
           cd ../${{ github.workspace }}
+          pwd
           mvn com.github.jazzmuesli:ck-mvn-plugin:metrics
       - name: Get report info
         id: reportsInfo
