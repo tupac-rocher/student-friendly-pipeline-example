@@ -3,7 +3,7 @@ package com.montpellier;
 public class Computer {
     private boolean isOn;
 
-    public Computer(){
+    public Computer() {
         isOn = false;
     }
 
@@ -19,3 +19,4 @@ public class Computer {
         isOn = false;
     }
 }
+
