@@ -50,6 +50,7 @@ jobs:
           distribution: 'adopt'
       - name: Test with Maven
         run: mvn -B test
+      # Test Coverage
       - name: Run Coverage
         run: |
             mvn jacoco:report
@@ -67,6 +68,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: 'github-pr-check'
           tool_name: 'testtool'
+      # Checkstyle
       - name: Run Checkstyle
         run: mvn checkstyle:checkstyle
       - name: Download a single artifact
@@ -77,16 +79,13 @@ jobs:
         run:  java -jar DesigniteJava.jar -i ./src -o ./target/designite
       - name: Run CK plugin
         run: |
-          pwd
           cd ..
-          pwd
           git clone https://github.com/jazzmuesli/ck-mvn-plugin.git
           cd ck-mvn-plugin
-          pwd
           mvn clean install -Dck.version=0.7.0
           cd ${{ github.workspace }}
-          pwd
           mvn com.github.jazzmuesli:ck-mvn-plugin:metrics -Dck.version=0.7.0
+      # Aggregate Information
       - name: Get report info
         id: reportsInfo
         uses: tupac-rocher/mvn-format-xml-reports@v1.3
