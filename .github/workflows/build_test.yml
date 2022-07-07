@@ -106,10 +106,8 @@ jobs:
             Total coverage ${{ steps.jacoco.outputs.coverage-overall }}
             Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}
             ## CK metrics
-            ${{ steps.reportsInfo.outputs.ck-main-class }}
-            ${{ steps.reportsInfo.outputs.ck-main-method }}
-            ${{ steps.reportsInfo.outputs.ck-test-class }}
-            ${{ steps.reportsInfo.outputs.ck-test-method }}
+            ${{ steps.reportsInfo.outputs.ck-classes-comment }}
+            ${{ steps.reportsInfo.outputs.ck-methods-comment }}
             ## Code quality
             ${{ steps.reportsInfo.outputs.checkstyle-comment }}
             ## Code smells
