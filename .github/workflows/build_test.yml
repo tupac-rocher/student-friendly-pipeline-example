@@ -103,7 +103,7 @@ jobs:
           message: |
             # Report
             ## Test Coverage
-            | Total coverage | ${{ steps.reportsInfo.outputs.test-coverage-comment }} %|
+            | Total coverage | ${{ steps.reportsInfo.outputs.test-coverage-comment }} |
             |:-|:-:|
             ## CK metrics
             ${{ steps.reportsInfo.outputs.ck-classes-comment }}
