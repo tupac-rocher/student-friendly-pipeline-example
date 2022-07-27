@@ -88,7 +88,7 @@ jobs:
       # Aggregate Information
       - name: Get report info
         id: reportsInfo
-        uses: tupac-rocher/mvn-format-xml-reports@v1.6
+        uses: tupac-rocher/mvn-format-xml-reports@v1.7
         with:
           checkstyle-result-xml: ${{ github.workspace }}/target/checkstyle-result.xml
           designite-result-csv: ${{ github.workspace }}/target/designite/designCodeSmells.csv
@@ -102,9 +102,8 @@ jobs:
           message: |
             # Report
             ## Test Coverage
-            | Total coverage | ${{ steps.jacoco.outputs.coverage-overall }} %|
+            | Total coverage | ${{ teps.reportsInfo.outputs.test-coverage-comment }} %|
             |:-|:-:|
-            Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}
             ## CK metrics
             ${{ steps.reportsInfo.outputs.ck-classes-comment }}
             ${{ steps.reportsInfo.outputs.ck-methods-comment }}
