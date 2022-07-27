@@ -90,6 +90,7 @@ jobs:
         id: reportsInfo
         uses: tupac-rocher/mvn-format-xml-reports@v1.7
         with:
+          jacoco-html-report: ${{ github.workspace }}/target/site/jacoco/index.html
           checkstyle-result-xml: ${{ github.workspace }}/target/checkstyle-result.xml
           designite-result-csv: ${{ github.workspace }}/target/designite/designCodeSmells.csv
           ck-main-class-csv: ${{ github.workspace }}/src/main/java/class.csv
