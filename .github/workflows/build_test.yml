@@ -54,14 +54,6 @@ jobs:
       - name: Run Coverage
         run: |
             mvn jacoco:report
-      - name: Add coverage to PR
-        id: jacoco
-        uses: madrapps/jacoco-report@v1.2
-        with:
-          paths: ${{ github.workspace }}/target/site/jacoco/jacoco.xml
-          token: ${{ secrets.GITHUB_TOKEN }}
-          min-coverage-overall: 40
-          min-coverage-changed-files: 60
       - name: Run check style to show in action
         uses: nikitasavinov/checkstyle-action@master
         with:
@@ -75,8 +67,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: designite-java
+      # DesigniteJava
       - name: Run Designite
         run:  java -jar DesigniteJava.jar -i ./src -o ./target/designite
+      # CK Plugin
       - name: Run CK plugin
         run: |
           cd ..
@@ -85,6 +79,26 @@ jobs:
           mvn clean install -Dck.version=0.7.0
           cd ${{ github.workspace }}
           mvn com.github.jazzmuesli:ck-mvn-plugin:metrics -Dck.version=0.7.0
+      # Metrics
+      - name: Download release
+      - uses: robinraju/release-downloader@v1.4
+        with:
+          # The source repository path.
+          repository: "rodhilton/jasome"
+          latest: true
+          tag: "v0.6.8"
+
+          # The name of the file to download.
+          fileName: "jasome-0.6.8-alpha.zip"
+          # Download the attached zipball (*.zip)
+          zipBall: true
+      - name: Unzip release
+      - uses: montudor/action-zip@v1
+        with:
+          args: unzip -qq jasome-0.6.8-alpha.zip -d jasome-0.6.8-alpha
+      - name: Generate metrics file
+      - run: |
+          jasome-0.6.8-alpha/bin/jasome ./src --output metrics.xml
       # Aggregate Information
       - name: Get report info
         id: reportsInfo
