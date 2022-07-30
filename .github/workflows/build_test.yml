@@ -96,9 +96,10 @@ jobs:
       - name: Generate metrics file
         run: |
           cd jasome-0.6.8-alpha/jasome-0.6.8-alpha
-          bin/jasome ../../src > ../../metrics.xml  
-          
-
+          bin/jasome ../../src > ../../metrics.xml
+          cd ../../
+          ls
+          echo metrics.xml
       # Aggregate Information
       - name: Get report info
         id: reportsInfo
@@ -109,8 +110,7 @@ jobs:
           designite-result-csv: ${{ github.workspace }}/target/designite/designCodeSmells.csv
           ck-main-class-csv: ${{ github.workspace }}/src/main/java/class.csv
           ck-main-method-csv: ${{ github.workspace }}/src/main/java/method.csv
-          ck-test-class-csv:  ${{ github.workspace }}/src/test/java/class.csv
-          ck-test-method-csv:  ${{ github.workspace }}/src/test/java/method.csv
+          #metrics-xml: ${{ github.workspace }}/metrics.xml
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@v1
         with:
