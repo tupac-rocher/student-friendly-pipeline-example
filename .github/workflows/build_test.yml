@@ -99,7 +99,7 @@ jobs:
           bin/jasome ../../src > ../../metrics.xml
           cd ../../
           ls
-          echo metrics.xml
+          cat metrics.xml
       # Aggregate Information
       - name: Get report info
         id: reportsInfo
