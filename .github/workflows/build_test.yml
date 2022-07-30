@@ -85,7 +85,6 @@ jobs:
         with:
           # The source repository path.
           repository: "rodhilton/jasome"
-          latest: true
           tag: "v0.6.8"
 
           # The name of the file to download.
