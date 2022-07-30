@@ -95,17 +95,8 @@ jobs:
           args: unzip -qq jasome-0.6.8-alpha.zip -d jasome-0.6.8-alpha
       - name: Generate metrics file
         run: |
-          ls
-          pwd
           cd jasome-0.6.8-alpha/jasome-0.6.8-alpha
-          pwd
-          ls
-          bin/jasome ../../src
-          pwd
-          ls
-          cd ../../src
-          pwd
-          ls
+          bin/jasome ../../src > ../../metrics.xml  
           
 
       # Aggregate Information
