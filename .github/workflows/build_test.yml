@@ -99,7 +99,8 @@ jobs:
         run: |
           ls
           pwd
-          jasome-0.6.8-alpha/bin/jasome ./src --output metrics.xml
+          cd jasome-0.6.8-alpha
+          bin/jasome ./src --output metrics.xml
       # Aggregate Information
       - name: Get report info
         id: reportsInfo
