@@ -100,7 +100,7 @@ jobs:
           cd jasome-0.6.8-alpha/jasome-0.6.8-alpha
           pwd
           ls
-          bin/jasome ../../src --output metrics.xml
+          echo bin/jasome ../../src
           pwd
           ls
           cd ../../src
