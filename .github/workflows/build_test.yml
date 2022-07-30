@@ -101,10 +101,13 @@ jobs:
           pwd
           ls
           bin/jasome ../../src --output metrics.xml
+          pwd
           ls
           cd bin
+          pwd
           ls
           cd jasome
+          pwd
           ls
       # Aggregate Information
       - name: Get report info
