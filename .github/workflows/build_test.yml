@@ -81,7 +81,7 @@ jobs:
           mvn com.github.jazzmuesli:ck-mvn-plugin:metrics -Dck.version=0.7.0
       # Metrics
       - name: Download release
-      - uses: robinraju/release-downloader@v1.4
+        uses: robinraju/release-downloader@v1.4
         with:
           # The source repository path.
           repository: "rodhilton/jasome"
@@ -93,11 +93,11 @@ jobs:
           # Download the attached zipball (*.zip)
           zipBall: true
       - name: Unzip release
-      - uses: montudor/action-zip@v1
+        uses: montudor/action-zip@v1
         with:
           args: unzip -qq jasome-0.6.8-alpha.zip -d jasome-0.6.8-alpha
       - name: Generate metrics file
-      - run: |
+        run: |
           jasome-0.6.8-alpha/bin/jasome ./src --output metrics.xml
       # Aggregate Information
       - name: Get report info
