@@ -97,9 +97,6 @@ jobs:
         run: |
           cd jasome-0.6.8-alpha/jasome-0.6.8-alpha
           bin/jasome ../../src > ../../metrics.xml
-          cd ../../
-          ls
-          cat metrics.xml
       # Aggregate Information
       - name: Get report info
         id: reportsInfo
@@ -109,8 +106,7 @@ jobs:
           checkstyle-result-xml: ${{ github.workspace }}/target/checkstyle-result.xml
           designite-result-csv: ${{ github.workspace }}/target/designite/designCodeSmells.csv
           ck-main-class-csv: ${{ github.workspace }}/src/main/java/class.csv
-          ck-main-method-csv: ${{ github.workspace }}/src/main/java/method.csv
-          #metrics-xml: ${{ github.workspace }}/metrics.xml
+          metrics-xml: ${{ github.workspace }}/metrics.xml
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@v1
         with:
@@ -120,8 +116,7 @@ jobs:
             | Total coverage | ${{ steps.reportsInfo.outputs.test-coverage-comment }} |
             |:-|:-:|
             ## CK metrics
-            ${{ steps.reportsInfo.outputs.ck-classes-comment }}
-            ${{ steps.reportsInfo.outputs.ck-methods-comment }}
+            ${{ steps.reportsInfo.outputs.metrics-comment }}
             ## Code quality
             ${{ steps.reportsInfo.outputs.checkstyle-comment }}
             ## Code smells
