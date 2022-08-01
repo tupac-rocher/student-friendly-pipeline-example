@@ -11,8 +11,8 @@ public abstract class Device {
         a = b;
     }
     public void foo2(int c) {
+        System.out.println("test");
         // overlapping by method argument
-        c = c;            // violation, reference to instance variable "c" requires "this"
     }
     private void emptyLoop() {
         for (int i = 0; i < 10; i++) { // violation
