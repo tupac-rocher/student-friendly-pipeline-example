@@ -1,6 +1,6 @@
 package com.montpellier;
 
-public class Computer {
+public class Computer extends Device{
     private boolean isOn;
 
     public Computer() {
