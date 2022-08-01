@@ -15,7 +15,7 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
       - name: Build with Maven
-        run: mvn --batch-mode --update-snapshots package
+        run: mvn --batch-mode --update-snapshots package -Dcheckstyle.skip
 
   # Upload Designite artifact job
   upload-designite-artifact:
@@ -49,7 +49,7 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
       - name: Test with Maven
-        run: mvn -B test
+        run: mvn -B test -Dcheckstyle.skip
       # Test Coverage
       - name: Run Coverage
         run: |

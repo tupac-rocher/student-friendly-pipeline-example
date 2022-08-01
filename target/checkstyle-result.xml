@@ -18,4 +18,6 @@
 <error line="22" severity="error" message="L&apos;instruction &apos;if&apos; devrait utiliser des accolades (&apos;{&apos; et &apos;}&apos;)." source="com.puppycrawl.tools.checkstyle.checks.blocks.NeedBracesCheck"/>
 <error line="24" column="34" severity="error" message="L&apos;utilisation de l&apos;opérateur conditionel est prohibée." source="com.puppycrawl.tools.checkstyle.checks.coding.AvoidInlineConditionalsCheck"/>
 </file>
+<file name="/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Office.java">
+</file>
 </checkstyle>
