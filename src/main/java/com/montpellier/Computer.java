@@ -2,8 +2,10 @@ package com.montpellier;
 
 public class Computer extends Device{
     private boolean isOn;
+    private boolean terminalOn;
 
     public Computer() {
+        super();
         isOn = false;
     }
 
@@ -17,6 +19,18 @@ public class Computer extends Device{
 
     public void turnOffComputer() {
         isOn = false;
+    }
+
+    public void openTerminal(){
+        if(isOn){
+            terminalOn = true;
+        }
+    }
+
+    public void printHelloWorld(){
+        if(terminalOn){
+            System.out.println("Hello World!");
+        }
     }
 }
 
