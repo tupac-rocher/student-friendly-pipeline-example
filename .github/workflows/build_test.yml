@@ -30,7 +30,6 @@ jobs:
         run: |
           cd DesigniteJava
           mvn package -Dmaven.test.skip
-          pwd
       - name: Upload DesigniteJava .jar
         uses: actions/upload-artifact@v3
         with:
@@ -69,7 +68,7 @@ jobs:
           name: designite-java
       # DesigniteJava
       - name: Run Designite
-        run:  java -jar DesigniteJava.jar -i ./src -o ./target/designite
+        run:  java -jar DesigniteJava.jar -i ./src/main -o ./target/designite
       # CK Plugin
       - name: Run CK plugin
         run: |
@@ -100,11 +99,12 @@ jobs:
       # Aggregate Information
       - name: Get report info
         id: reportsInfo
-        uses: tupac-rocher/mvn-format-xml-reports@v1.9
+        uses: tupac-rocher/mvn-format-xml-reports@v2
         with:
           jacoco-html-report: ${{ github.workspace }}/target/site/jacoco/index.html
           checkstyle-result-xml: ${{ github.workspace }}/target/checkstyle-result.xml
-          designite-result-csv: ${{ github.workspace }}/target/designite/designCodeSmells.csv
+          designite-design-result-csv: ${{ github.workspace }}/target/designite/designCodeSmells.csv
+          designite-implementation-result-csv: ${{ github.workspace }}/target/designite/implementationCodeSmells.csv
           ck-main-class-csv: ${{ github.workspace }}/src/main/java/class.csv
           metrics-xml: ${{ github.workspace }}/metrics.xml
       - name: Comment PR
