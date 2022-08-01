@@ -5,7 +5,7 @@ public class Computer extends Device{
     private boolean terminalOn;
 
     public Computer() {
-        super();
+        super(1,2,3);
         isOn = false;
     }
 

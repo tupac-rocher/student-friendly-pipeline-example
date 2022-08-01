@@ -5,10 +5,15 @@ public abstract class Device {
     private int b;
     private int c;
 
+    public Device(int a, int b, int c){
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+
     public void foo(int c) {
         // overlapping by method argument
         c = c;            // violation, reference to instance variable "c" requires "this"
-        a = b;
     }
     public void foo2(int c) {
         System.out.println("test");
