@@ -100,7 +100,7 @@ jobs:
       # Aggregate Information
       - name: Get report info
         id: reportsInfo
-        uses: tupac-rocher/mvn-format-xml-reports@v1.8
+        uses: tupac-rocher/mvn-format-xml-reports@v1.9
         with:
           jacoco-html-report: ${{ github.workspace }}/target/site/jacoco/index.html
           checkstyle-result-xml: ${{ github.workspace }}/target/checkstyle-result.xml
