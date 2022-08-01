@@ -6,4 +6,8 @@ public class Office {
     public Office() {
         computer = new Computer();
     }
+
+    public void startingToWork () {
+        computer.turnOnComputer();
+    }
 }
