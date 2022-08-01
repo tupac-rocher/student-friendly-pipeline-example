@@ -120,7 +120,7 @@ jobs:
             ## Code quality
             ${{ steps.reportsInfo.outputs.checkstyle-comment }}
             ## Code smells
-            ${{ steps.reportsInfo.outputs.designite-comment }}
+            ${{ steps.reportsInfo.outputs.code-smells-comment }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
