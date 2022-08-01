@@ -8,6 +8,7 @@ public abstract class Device {
     public void foo(int c) {
         // overlapping by method argument
         c = c;            // violation, reference to instance variable "c" requires "this"
+        a = b;
     }
     public void foo2(int c) {
         // overlapping by method argument
