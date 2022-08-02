@@ -25,6 +25,7 @@ public class Computer extends Device{
         if(isOn){
             terminalOn = true;
         }
+        super.foo(2);
     }
 
     public void printHelloWorld(){

@@ -95,7 +95,7 @@ jobs:
       - name: Generate metrics file
         run: |
           cd jasome-0.6.8-alpha/jasome-0.6.8-alpha
-          bin/jasome ../../src > ../../metrics.xml
+          bin/jasome ../../src/main > ../../metrics.xml
       # Aggregate Information
       - name: Get report info
         id: reportsInfo

@@ -32,7 +32,7 @@ public abstract class Device {
             // ignored
         }
         int test = 0;
-        if (true) {
+        if (parameter > 10) {
             test = 1; // violation
         }
         else {
