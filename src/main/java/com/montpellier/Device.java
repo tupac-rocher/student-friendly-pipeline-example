@@ -41,7 +41,7 @@ public abstract class Device {
             }
         }
         String text = "";
-        text = (parameter > 10) ? "" : text;
+        text = (true) ? "" : text;
         text = parameter > 15 ? "Choux" : text;
 
     }
