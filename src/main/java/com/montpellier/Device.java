@@ -21,6 +21,9 @@ public abstract class Device {
     }
     private void emptyLoop() {
         for (int i = 0; i < 10; i++) { // violation
+            for(int j = 0; j < 10; j++){
+
+            }
         }
 
         try { // violation
