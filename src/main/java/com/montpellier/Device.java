@@ -19,7 +19,7 @@ public abstract class Device {
         System.out.println("test");
         // overlapping by method argument
     }
-    private void emptyLoop() {
+    private void emptyLoop(int parameter) {
         for (int i = 0; i < 10; i++) { // violation
             for(int j = 0; j < 10; j++){
 
@@ -35,7 +35,14 @@ public abstract class Device {
         if (true) {
             test = 1; // violation
         }
-        String text ="";
-        text = (text.equals("")) ? "" : text;
+        else {
+            if(parameter == 0){
+                System.out.println("Hello World");
+            }
+        }
+        String text = "";
+        text = (parameter > 10) ? "" : text;
+        text = parameter > 15 ? "Choux" : text;
+
     }
 }

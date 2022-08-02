@@ -1,0 +1,11 @@
+file,class,method,variable,usage
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Device.java,com.montpellier.Device,"Device/3[int,int,int]",a,2
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Device.java,com.montpellier.Device,"Device/3[int,int,int]",b,2
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Device.java,com.montpellier.Device,"Device/3[int,int,int]",c,2
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Device.java,com.montpellier.Device,foo2/1[int],c,0
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Device.java,com.montpellier.Device,foo/1[int],c,2
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Device.java,com.montpellier.Device,emptyLoop/0,test,1
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Device.java,com.montpellier.Device,emptyLoop/0,e,0
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Device.java,com.montpellier.Device,emptyLoop/0,i,2
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Device.java,com.montpellier.Device,emptyLoop/0,j,2
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Device.java,com.montpellier.Device,emptyLoop/0,text,3

@@ -1,0 +1,15 @@
+file,class,method,variable,usage
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Computer.java,com.montpellier.Computer,Computer/0,isOn,1
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Computer.java,com.montpellier.Computer,isOn/0,isOn,2
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Computer.java,com.montpellier.Computer,turnOnComputer/0,isOn,1
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Computer.java,com.montpellier.Computer,turnOffComputer/0,isOn,1
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Computer.java,com.montpellier.Computer,openTerminal/0,terminalOn,1
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Computer.java,com.montpellier.Computer,openTerminal/0,isOn,1
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Computer.java,com.montpellier.Computer,printHelloWorld/0,terminalOn,1
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Device.java,com.montpellier.Device,"Device/3[int,int,int]",a,3
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Device.java,com.montpellier.Device,"Device/3[int,int,int]",b,3
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Device.java,com.montpellier.Device,"Device/3[int,int,int]",c,3
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Device.java,com.montpellier.Device,foo2/1[int],c,1
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Device.java,com.montpellier.Device,foo/1[int],c,3
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Office.java,com.montpellier.Office,Office/0,computer,1
+/Users/tupacrocher/IdeaProjects/SampleProject/src/main/java/com/montpellier/Office.java,com.montpellier.Office,startingToWork/0,computer,2
