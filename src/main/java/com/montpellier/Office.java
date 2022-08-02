@@ -9,5 +9,6 @@ public class Office {
 
     public void startingToWork () {
         computer.turnOnComputer();
+        computer.turnOffComputer();
     }
 }
