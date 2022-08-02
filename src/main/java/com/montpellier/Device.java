@@ -29,7 +29,9 @@ public abstract class Device {
             // ignored
         }
         int test = 0;
-        if (true) test = 1; // violation
+        if (true) {
+            test = 1; // violation
+        }
         String text ="";
         text = (text.equals("")) ? "" : text;
     }
