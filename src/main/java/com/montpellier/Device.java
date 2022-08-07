@@ -1,5 +1,6 @@
 package com.montpellier;
 public abstract class Device {
+
     final static int third_Constant3 = 1000;
     private int a;
     private int b;
