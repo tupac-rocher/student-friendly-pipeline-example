@@ -14,7 +14,7 @@ jobs:
         with:
           java-version: '17'
           distribution: 'adopt'
-      - name: Build with Maven
+      - name: Package with Maven
         run: mvn --batch-mode --update-snapshots package -Dcheckstyle.skip
 
   # Upload Designite artifact job
@@ -26,11 +26,11 @@ jobs:
         with:
           owner: 'tushartushar'
           repository: 'DesigniteJava'
-      - name: Create DesigniteJava .jar
+      - name: Generate DesigniteJava .jar file
         run: |
           cd DesigniteJava
           mvn package -Dmaven.test.skip
-      - name: Upload DesigniteJava .jar
+      - name: Upload DesigniteJava .jar file
         uses: actions/upload-artifact@v3
         with:
           name: designite-java
@@ -50,27 +50,22 @@ jobs:
       - name: Test with Maven
         run: mvn -B test -Dcheckstyle.skip
       # Test Coverage
-      - name: Run Coverage
+      - name: Run Jacoco goal 'report'
         run: |
             mvn jacoco:report
-      - name: Run check style to show in action
-        uses: nikitasavinov/checkstyle-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          reporter: 'github-pr-check'
-          tool_name: 'testtool'
       # Checkstyle
-      - name: Run Checkstyle
+      - name: Run Checkstyle goal 'checkstyle'
         run: mvn checkstyle:checkstyle
-      - name: Download a single artifact
+      # DesigniteJava
+      - name: Download designite executable artifact
         uses: actions/download-artifact@v3
         with:
           name: designite-java
-      # DesigniteJava
-      - name: Run Designite
+      - name: Run Designite executable
+        # from the main folder only
         run:  java -jar DesigniteJava.jar -i ./src/main -o ./target/designite
       # CK Plugin
-      - name: Run CK plugin
+      - name: Run CK plugin goal 'metrics'
         run: |
           cd ..
           git clone https://github.com/jazzmuesli/ck-mvn-plugin.git
@@ -79,7 +74,7 @@ jobs:
           cd ${{ github.workspace }}
           mvn com.github.jazzmuesli:ck-mvn-plugin:metrics -Dck.version=0.7.0
       # Metrics
-      - name: Download release
+      - name: Download JaSoMe release
         uses: robinraju/release-downloader@v1.4
         with:
           # The source repository path.
@@ -88,18 +83,19 @@ jobs:
 
           # The name of the file to download.
           fileName: "jasome-0.6.8-alpha.zip"
-      - name: Unzip release
+      - name: Unzip JaSoMe release
         uses: montudor/action-zip@v1
         with:
           args: unzip -qq jasome-0.6.8-alpha.zip -d jasome-0.6.8-alpha
       - name: Generate metrics file
+        # from the main folder only
         run: |
           cd jasome-0.6.8-alpha/jasome-0.6.8-alpha
           bin/jasome ../../src/main > ../../metrics.xml
       # Aggregate Information
       - name: Get report info
         id: reportsInfo
-        uses: tupac-rocher/mvn-format-xml-reports@v2
+        uses: tupac-rocher/mvn-format-xml-reports@v2.1
         with:
           jacoco-html-report: ${{ github.workspace }}/target/site/jacoco/index.html
           checkstyle-result-xml: ${{ github.workspace }}/target/checkstyle-result.xml
@@ -109,18 +105,10 @@ jobs:
           metrics-xml: ${{ github.workspace }}/metrics.xml
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@v1
+        # Use the output from the action
         with:
           message: |
-            # Report
-            ## Test Coverage
-            | Total coverage | ${{ steps.reportsInfo.outputs.test-coverage-comment }} |
-            |:-|:-:|
-            ## CK metrics
-            ${{ steps.reportsInfo.outputs.metrics-comment }}
-            ## Code quality
-            ${{ steps.reportsInfo.outputs.checkstyle-comment }}
-            ## Code smells
-            ${{ steps.reportsInfo.outputs.code-smells-comment }}
+            ${{ steps.reportsInfo.outputs.report-comment }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
