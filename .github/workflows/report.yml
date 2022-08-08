@@ -4,8 +4,8 @@ on: [pull_request]
 
 jobs:
 
-  # Build job
-  build:
+  # Test job
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -95,14 +95,14 @@ jobs:
       # Aggregate Information
       - name: Get report info
         id: reportsInfo
-        uses: tupac-rocher/mvn-format-xml-reports@v2.1
+        uses: tupac-rocher/mvn-student-friendly-report@v2.1
         with:
           jacoco-html-report: ${{ github.workspace }}/target/site/jacoco/index.html
+          ck-main-class-csv: ${{ github.workspace }}/src/main/java/class.csv
+          metrics-xml: ${{ github.workspace }}/metrics.xml
           checkstyle-result-xml: ${{ github.workspace }}/target/checkstyle-result.xml
           designite-design-result-csv: ${{ github.workspace }}/target/designite/designCodeSmells.csv
           designite-implementation-result-csv: ${{ github.workspace }}/target/designite/implementationCodeSmells.csv
-          ck-main-class-csv: ${{ github.workspace }}/src/main/java/class.csv
-          metrics-xml: ${{ github.workspace }}/metrics.xml
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@v1
         # Use the output from the action
