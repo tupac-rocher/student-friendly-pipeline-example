@@ -3,6 +3,7 @@ package com.montpellier;
 public class Computer extends Device{
 
     private boolean isOn;
+
     private boolean terminalOn;
 
     public Computer() {
