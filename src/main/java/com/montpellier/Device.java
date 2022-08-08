@@ -7,7 +7,6 @@ public abstract class Device {
     private int a;
 
     private int b;
-
     private int c;
 
     public Device(int a, int b, int c){
