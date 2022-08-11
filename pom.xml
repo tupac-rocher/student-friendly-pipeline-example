@@ -29,14 +29,6 @@
                 <executions>
                     <execution>
                         <goals>
-                            <goal>prepare-agent</goal>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>generate-code-coverage-report</id>
-                        <phase>test</phase>
-                        <goals>
                             <goal>report</goal>
                         </goals>
                     </execution>
@@ -49,9 +41,7 @@
                 <configuration>
                     <configLocation>checkstyle.xml</configLocation>
                     <encoding>UTF-8</encoding>
-
                 </configuration>
-
             </plugin>
         </plugins>
     </build>

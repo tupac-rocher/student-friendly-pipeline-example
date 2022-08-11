@@ -4,8 +4,8 @@ on: [pull_request]
 
 jobs:
 
-  # Test job
-  test:
+  # Build job
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -14,8 +14,8 @@ jobs:
         with:
           java-version: '17'
           distribution: 'adopt'
-      - name: Package with Maven
-        run: mvn test
+      - name: Build with Maven
+        run: mvn --batch-mode --update-snapshots package
 
   # Upload Designite artifact job
   upload-designite-artifact:
