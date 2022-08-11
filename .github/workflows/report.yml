@@ -15,7 +15,7 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
       - name: Package with Maven
-        run: mvn --batch-mode --update-snapshots package -Dcheckstyle.skip
+        run: mvn test
 
   # Upload Designite artifact job
   upload-designite-artifact:
