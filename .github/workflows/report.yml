@@ -47,12 +47,9 @@ jobs:
         with:
           java-version: '17'
           distribution: 'adopt'
-      - name: Test with Maven
-        run: mvn -B test -Dcheckstyle.skip
       # Test Coverage
-      - name: Run Jacoco goal 'report'
-        run: |
-            mvn jacoco:report
+      - name: Run Jacoco goal 'report' tied to mvn test
+        run: mvn test
       # Checkstyle
       - name: Run Checkstyle goal 'checkstyle'
         run: mvn checkstyle:checkstyle
