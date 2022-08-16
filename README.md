@@ -7,6 +7,10 @@ This repository shows an example of a Github workflow that evaluates the quality
 
 The workflow works by creating a report for pull request submitted to the repository. For example, see the [pull request in this repository](https://github.com/tupac-rocher/student-friendly-pipeline-example/pull/4).
 
+The usage section can be seen [here](#usage)
+
+The feedback report section can be seen [here](#feedback-report)
+
 ## Usage
  
  In order to get this feedback report you need to add configurations to your Maven project:
