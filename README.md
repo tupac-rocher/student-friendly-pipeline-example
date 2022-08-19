@@ -135,8 +135,8 @@ The metric section is divided into 2 categories, class-level metrics and method-
 #### Class Level
 | Metric | Category | Range | Description | Interpretation
 | ------ | -------- | ----------- | - | - |
-| FAN-IN | Coupling | 0..N | The number of input dependencies a class has | High value: a class that is depended on a lot by other classes |
-| FAN-OUT | Coupling | 0..N | The number of output dependencies a class has | High value: a class that depends a lot on other classes |
+| FAN-IN | Coupling | 0..N | The number of input dependencies a class has | High value: a class that is used a lot by other classes, tightly coupled to the rest of the design. This could lead to knock-on effects |
+| FAN-OUT | Coupling | 0..N | The number of output dependencies a class has | High value: a class that uses a lot of other classes |
 | TCC | Cohesion | 0..1 | TCC measures the cohesion of a class via direct connections between visible methods. A direct connection between happens when these methods or their invocation trees access the same class variable. | High value: a class that is cohesive. |
 | Method Iheritance Factor (MIF) | Inheritance | 0..1 | MD = Methods defined<br>PMI = Public methods inherited<br>MIF = PMI / (PMI + MD) | High value: a class that inherits more methods than it defines. It suggests that the class reuses functionalities of its parent. |
 | Public Attributes | Encapsulation | 0..N | The number of fields that are visible (e.g. public) | High value: a class for which its attributes are not encapsulated |
@@ -146,8 +146,8 @@ The metric section is divided into 2 categories, class-level metrics and method-
 #### Method Level
 | Metric | Category | Range | Description | Interpretation |
 | ------ | -------- | ----------- | - | - |
-| FAN-IN | Coupling | 0..N | The number of input dependencies a method has | High value: a method that is depended on a lot by other method (responsibilities) |
-| FAN-OUT | Coupling | 0..N | The number of output dependencies a method has | High value: a class that depends a lot on other method |
+| FAN-IN | Coupling | 0..N | The number of input dependencies a method has | High value: a method that is used a lot by other methods (responsibilities), tightly coupled to the rest of the design. This could lead to knock-on effects |
+| FAN-OUT | Coupling | 0..N | The number of output dependencies a method has | High value: a class that uses a lot of other methods |
 | Total Lines of Code (TLOC) | Size | 0..N | The total lines of code without comments and whitespaces. | High value: a method that can be hard to understand and to maintain. May be violating the Single Responsibility Principle. It may include duplicated code. |
 | Number of Parameters (NOP) | Readability | 0..N | The number of parameters | High value: a method that can be hard to understand and to maintain. The parameters can be misinterpreted or given in the wrong order. It may be a sign of low cohesion. |
 | Nested Block Depth (NBD) | Complexity | 1..N | The number of the maximum depth of nested block. If there is no nested block, the depth equals to 1. | High value: a method that is more likely to be complex |
@@ -252,3 +252,8 @@ Hierarchy
 - [Missing default](https://tusharma.in/smells/IMD.html)
 
 ---
+References: 
+
+- [Refactoring Guru](https://refactoring.guru/)
+- [Fan-in, Fan out](http://www.expertsmind.com/questions/explain-fan-in-and-fan-out-30176906.aspx)
+- [High Fan-in vs High Fan out](https://stackoverflow.com/questions/4092228/design-principle-high-fan-in-vs-high-fan-out)
