@@ -135,19 +135,19 @@ The metric section is divided into 2 categories, class-level metrics and method-
 #### Class Level
 | Metric | Category | Range | Description | Interpretation
 | ------ | -------- | ----------- | - | - |
-| FAN-IN | Coupling | 0..N | The number of input dependencies a class has | High value: a class that is used a lot by other classes, tightly coupled to the rest of the design. This could lead to knock-on effects. |
-| FAN-OUT | Coupling | 0..N | The number of output dependencies a class has | High value: a class that uses a lot of other classes. It is a class prone to change. |
-| TCC | Cohesion | 0..1 | TCC measures the cohesion of a class via direct connections between visible methods. A direct connection happens when these methods or their invocation trees access the same class variable. | High value: a class that is cohesive. |
+| FAN-IN | Coupling | 0..N | The number of input dependencies a class has | High value: A class that is used a lot by other classes. It is tightly coupled to the rest of the design. This could lead to knock-on effects. |
+| FAN-OUT | Coupling | 0..N | The number of output dependencies a class has | High value: A class that uses a lot of other classes. It is a class prone to change. |
+| TCC | Cohesion | 0..1 | TCC measures the cohesion of a class via direct connections between visible methods. A direct connection happens when these methods or their invocation trees access the same class variable. | High value: A class that is cohesive. |
 | Method Iheritance Factor (MIF) | Inheritance | 0..1 | MD = Methods defined<br>PMI = Public methods inherited<br>MIF = PMI / (PMI + MD) | Low value: a class that does not inherit a lot of methods. Questionable inheritance<br>High value: a class that inherits a lot of methods. Signs of reusability. |
 | Public Attributes | Encapsulation | 0..N | The number of fields that are visible (e.g. public) | High value: Many attributes are visible. It is a sign of poor design. |
-| Method Hiding Factor (MHF) | Encapsulation | 0..1 | TNM = Total Number of Methods<br>NVM = Non-Visible Methods<br>MHF = NVM/TNM | High value: a class that is does not have little public methods.  |
+| Method Hiding Factor (MHF) | Encapsulation | 0..1 | TNM = Total Number of Methods<br>NVM = Non-Visible Methods<br>MHF = NVM/TNM | High value: A class that is does not have little public methods.  |
 
 
 #### Method Level
 | Metric | Category | Range | Description | Interpretation |
 | ------ | -------- | ----------- | - | - |
-| FAN-IN | Coupling | 0..N | The number of input dependencies a method has | High value: a method that is used a lot by other methods, tightly coupled to the rest of the design. This could lead to knock-on effects |
-| FAN-OUT | Coupling | 0..N | The number of output dependencies a method has | High value: a class that uses a lot of other methods. It is a method prone to change. |
+| FAN-IN | Coupling | 0..N | The number of input dependencies a method has | High value: A method that is used a lot by other methods. It is tightly coupled to the rest of the design. This could lead to knock-on effects |
+| FAN-OUT | Coupling | 0..N | The number of output dependencies a method has | High value: A class that uses a lot of other methods. It is a method prone to change. |
 | Total Lines of Code (TLOC) | Size | 0..N | The total lines of code without comments and whitespaces. | High value: Large method. A method that can be hard to understand and to maintain. May be violating the Single Responsibility Principle. It may include duplicated code. |
 | Number of Parameters (NOP) | Readability | 0..N | The number of parameters | High value: Long parameter list. A method that can be hard to understand and to maintain. The parameters can be misinterpreted or given in the wrong order. It may be a sign of low cohesion. |
 | Nested Block Depth (NBD) | Complexity | 1..N | The number of the maximum depth of nested block. If there is no nested block, the depth equals to 1. | High value: A method that contains deep nested blocks. A method that is complex. Harder to test all the cases of a method. |
