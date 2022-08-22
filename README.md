@@ -12,6 +12,8 @@ The usage section can be seen [here](#usage)
 The feedback report section can be seen [here](#feedback-report)
 
 ## Usage
+
+Fork and Clone this repository. You will be able to generate a report by submitting a Pull Request.
  
  In order to get this feedback report you need to add configurations to your Maven project:
  - [Workflow configuration](#workflow-configuration): The workflow configuration file for Github Actions is report.yml
