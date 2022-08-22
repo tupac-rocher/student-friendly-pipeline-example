@@ -137,10 +137,10 @@ The metric section is divided into 2 categories, class-level metrics and method-
 | ------ | -------- | ----------- | - | - |
 | FAN-IN | Coupling | 0..N | The number of input dependencies a class has | High value: a class that is used a lot by other classes, tightly coupled to the rest of the design. This could lead to knock-on effects |
 | FAN-OUT | Coupling | 0..N | The number of output dependencies a class has | High value: a class that uses a lot of other classes |
-| TCC | Cohesion | 0..1 | TCC measures the cohesion of a class via direct connections between visible methods. A direct connection between happens when these methods or their invocation trees access the same class variable. | High value: a class that is cohesive. |
+| TCC | Cohesion | 0..1 | TCC measures the cohesion of a class via direct connections between visible methods. A direct connection happens when these methods or their invocation trees access the same class variable. | High value: a class that is cohesive. |
 | Method Iheritance Factor (MIF) | Inheritance | 0..1 | MD = Methods defined<br>PMI = Public methods inherited<br>MIF = PMI / (PMI + MD) | High value: a class that inherits more methods than it defines. It suggests that the class reuses functionalities of its parent. |
 | Public Attributes | Encapsulation | 0..N | The number of fields that are visible (e.g. public) | High value: a class for which its attributes are not encapsulated |
-| Method Hiding Factor (MHF) | Encapsulation | 0..N | TNM = Total Number of Methods<br>NVM = Non-Visible Methods<br>MHF = NVM/TNM | High value: a class that is really encapsulated with regards to its functionalities |
+| Method Hiding Factor (MHF) | Encapsulation | 0..1 | TNM = Total Number of Methods<br>NVM = Non-Visible Methods<br>MHF = NVM/TNM | High value: a class that is really encapsulated with regards to its functionalities |
 
 
 #### Method Level
@@ -151,7 +151,7 @@ The metric section is divided into 2 categories, class-level metrics and method-
 | Total Lines of Code (TLOC) | Size | 0..N | The total lines of code without comments and whitespaces. | High value: a method that can be hard to understand and to maintain. May be violating the Single Responsibility Principle. It may include duplicated code. |
 | Number of Parameters (NOP) | Readability | 0..N | The number of parameters | High value: a method that can be hard to understand and to maintain. The parameters can be misinterpreted or given in the wrong order. It may be a sign of low cohesion. |
 | Nested Block Depth (NBD) | Complexity | 1..N | The number of the maximum depth of nested block. If there is no nested block, the depth equals to 1. | High value: a method that is more likely to be complex |
-| McCabe Cyclomatic Complexity | Complexity | 1..N | Representation of the control flow as a graph (control flow graph)<br>The control flow contains nodes (entry point, exit point, decision points)<br>Nodes are connected by directed edges<br>M = E - N +2P<br>number of edges E<br>number of nodes N<br>number of connected components P (graph theory)<br>Cyclomatic complexity of Representation of the control flow as a graph (control flow graph)<br>The control flow contains nodes (entry point, exit point, decision points)<br>Cyclomatic complexity of a linear control flow is always one. | High value: a method that is complex. Harder to test all the cases of a method |
+| McCabe Cyclomatic Complexity | Complexity | 1..N | Representation of the control flow as a graph (control flow graph)<br>The control flow contains nodes (entry point, exit point, decision points)<br>Nodes are connected by directed edges<br>M = E - N +2P<br>number of edges E<br>number of nodes N<br>number of connected components P (graph theory)<br>Cyclomatic complexity of a linear control flow is always one. | High value: a method that is complex. Harder to test all the cases of a method |
 
 ---
 ### Code Quality
