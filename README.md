@@ -1,8 +1,8 @@
 # Student-friendly pipeline documentation
 
 This repository shows an example of a Github workflow that evaluates the quality of a Java project and reports:
-- [Design Metrics](#metrics)
-- [Code level style checks](#code-quality)
+- [Design metrics](#metrics)
+- [Code style](#code-style)
 - [Code smells](#code-smells)
 
 The workflow works by creating a report for pull request submitted to the repository. For example, see the [pull request in this repository](https://github.com/tupac-rocher/student-friendly-pipeline-example/pull/5).
@@ -156,7 +156,7 @@ The metric section is divided into 2 categories, class-level metrics and method-
 | McCabe Cyclomatic Complexity | Complexity | 1..N | Representation of the control flow as a graph (control flow graph)<br>The control flow contains nodes (entry point, exit point, decision points)<br>Nodes are connected by directed edges<br>M = E - N +2P<br>number of edges E<br>number of nodes N<br>number of connected components P (graph theory)<br>Cyclomatic complexity of a linear control flow is always one. | High value: Many different paths exist in the same method. A method that is complex. Harder to test all the cases of a method. |
 
 ---
-### Code Quality
+### Code Style
 
 This list are all the issues selected to be reported by Checkstyle, a tool that automates the process of checking Java code. This selection is based on a paper that describes all Checkstyle code quality issues considered rekevant for computing undergraduates. See the reference below.<br>
 Oscar Karnalim, Simon, William Chivers, "Work-In-Progress: Code Quality Issues of Computing Undergraduates", [ref](https://ieeexplore.ieee.org/document/9766807)
