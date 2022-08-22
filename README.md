@@ -137,7 +137,7 @@ The metric section is divided into 2 categories, class-level metrics and method-
 | ------ | -------- | ----------- | - | - |
 | FAN-IN | Coupling | 0..N | The number of input dependencies a class has | High value: A class that is used a lot by other classes. It is tightly coupled to the rest of the design. This could lead to knock-on effects. |
 | FAN-OUT | Coupling | 0..N | The number of output dependencies a class has | High value: A class that uses a lot of other classes. It is a class prone to change. |
-| TCC | Cohesion | 0..1 | TCC measures the cohesion of a class via direct connections between visible methods. A direct connection happens when these methods or their invocation trees access the same class variable. | High value: A class that is cohesive. |
+| TCC | Cohesion | 0..1 | TCC measures the cohesion of a class via direct connections between visible methods. A direct connection happens when these methods or their invocation trees access the same class variable. | High value: Many pairs of methods access the same class variable. A class that is cohesive. |
 | Method Iheritance Factor (MIF) | Inheritance | 0..1 | MD = Methods defined<br>PMI = Public methods inherited<br>MIF = PMI / (PMI + MD) | Low value: A class that does not inherit a lot of methods. Questionable inheritance.<br>High value: A class that inherits a lot of methods. Signs of reusability. |
 | Public Attributes | Encapsulation | 0..N | The number of fields that are visible (e.g. public) | High value: Many attributes are visible. It is a sign of poor design. |
 | Method Hiding Factor (MHF) | Encapsulation | 0..1 | TNM = Total Number of Methods<br>NVM = Non-Visible Methods<br>MHF = NVM/TNM | High value: A class that has little public methods. The class has little access.  |
