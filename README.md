@@ -1,7 +1,7 @@
 # Student-friendly pipeline documentation
 
 This repository shows an example of a Github workflow that evaluates the quality of a Java project and reports:
-- [Design metrics](#metrics)
+- [Design metrics](#design-metrics)
 - [Code style](#code-style)
 - [Code smells](#code-smells)
 
