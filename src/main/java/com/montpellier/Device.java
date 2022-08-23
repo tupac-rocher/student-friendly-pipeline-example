@@ -51,4 +51,6 @@ public abstract class Device {
         text = parameter > 15 ? "Choux" : text;
 
     }
+
+    public abstract void abstractMethod();
 }

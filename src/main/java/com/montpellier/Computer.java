@@ -9,6 +9,12 @@ public class Computer extends Device{
     public Computer() {
         super(1,2,3);
         isOn = false;
+        abstractMethod();
+    }
+
+    @Override
+    public void abstractMethod() {
+        System.out.println("test");
     }
 
     public boolean isOn() {
