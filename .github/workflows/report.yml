@@ -92,7 +92,7 @@ jobs:
       # Aggregate Information
       - name: Get report info
         id: reportsInfo
-        uses: tupac-rocher/mvn-student-friendly-report@v2.2
+        uses: tupac-rocher/mvn-student-friendly-report@v2.3
         with:
           jacoco-html-report: ${{ github.workspace }}/target/site/jacoco/index.html
           ck-main-class-csv: ${{ github.workspace }}/src/main/java/class.csv
