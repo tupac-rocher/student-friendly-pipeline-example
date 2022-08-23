@@ -9,7 +9,8 @@ public class Computer extends Device{
     public Computer() {
         super(1,2,3);
         isOn = false;
-        abstractMethod();
+        super.foo(3);
+        super.abstractMethod();
     }
 
     @Override
