@@ -5,7 +5,7 @@ This repository shows an example of a Github workflow that evaluates the quality
 - [Code style](#code-style)
 - [Code smells](#code-smells)
 
-The workflow works by creating a report for pull request submitted to the repository. For example, see the [pull request in this repository](https://github.com/tupac-rocher/student-friendly-pipeline-example/pull/5).
+The workflow works by creating a report for pull request submitted to the repository. For example, see the [pull request in this repository](https://github.com/tupac-rocher/student-friendly-pipeline-example/pull/6).
 
 The usage section can be seen [here](#usage)
 
