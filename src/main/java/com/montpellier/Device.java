@@ -18,6 +18,7 @@ public abstract class Device {
         this.a = a;
         this.b = b;
         this.c = c;
+        abstractMethod();
     }
 
     public void foo2(int c) {
