@@ -242,7 +242,6 @@ Hierarchy
 
 #### Implementation smells
 
-- Abstract Function Call From Constructor
 - [Complex Conditional](https://tusharma.in/smells/ICC.html)
 - [Complex Method](https://tusharma.in/smells/ICM.html)
 - [Empty catch clause](https://tusharma.in/smells/IECB.html)
