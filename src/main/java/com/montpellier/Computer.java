@@ -10,7 +10,6 @@ public class Computer extends Device{
         super(1,2,3);
         isOn = false;
         super.foo(3);
-        super.abstractMethod();
     }
 
     @Override
